@@ -1,13 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import { useEffect, useState } from 'react'
 import Create from './Create'
 import Delete from './Delete'
 import Edit from './Edit'
 
-const inter = Inter({ subsets: ['latin'] })
 
 interface Book {
   description: string;

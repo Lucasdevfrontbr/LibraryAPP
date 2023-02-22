@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 type Props={
   Render:any;
@@ -11,7 +11,7 @@ const [author, setauthor] = useState<string>('');
 const [year, setyear] = useState<number>(0);
 const [description, setdescription] = useState<string>('');
 
-    async function createBook(name:string,image_url:string,author:string,year:number,description:string) {
+    async function CreateBook(name:string,image_url:string,author:string,year:number,description:string) {
         const response = await fetch('http://localhost:8000/create', {
           method: 'POST',
           body: JSON.stringify({ name,image_url, author,year,description }),
@@ -25,7 +25,7 @@ const [description, setdescription] = useState<string>('');
         event.preventDefault()
         if( name && image_url  && author && year && description){
 
-         createBook(name,image_url, author,year,description);
+         CreateBook(name,image_url, author,year,description);
          setname('')
         setimage_url('')
       
@@ -56,7 +56,7 @@ const [description, setdescription] = useState<string>('');
       />
       <br />
 
-      <label htmlFor="author">author:</label>
+      <label htmlFor="author">autor:</label>
       <input
         type="text"
         id="author"
@@ -65,21 +65,21 @@ const [description, setdescription] = useState<string>('');
       />
       <br />
       
-      <label htmlFor="year">year</label>
+      <label htmlFor="year">ano:</label>
       <input
         type="number"
         id="year"
         value={year}
         onChange={event => setyear(parseInt(event.target.value))} 
       />
-      <label htmlFor="description">description:</label>
+      <label htmlFor="description">descrição:</label>
       <input
         type="text"
         id="description"
         value={description}
         onChange={event => setdescription(event.target.value)} 
       />
-      <button type="submit">Criar usuário</button>
+      <button type="submit">Adicionar livro</button>
     </form>
     </>
   );
