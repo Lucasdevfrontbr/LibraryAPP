@@ -1,15 +1,22 @@
-import { useState } from 'react'
 
-type Props={
-  Render:any;
+import React from 'react';
+import { useState, } from 'react';
+import { useRouter } from 'next/router';
+
+interface CreateProps {
+  Render():void;
 }
-export default function Create({Render}: Props) {
+
+export default function Create({ Render }: CreateProps) {
 
     const [name, setname] = useState<string>('');
 const [image_url, setimage_url] = useState<string>('');
 const [author, setauthor] = useState<string>('');
 const [year, setyear] = useState<number>(0);
 const [description, setdescription] = useState<string>('');
+
+
+const router = useRouter();
 
     async function CreateBook(name:string,image_url:string,author:string,year:number,description:string) {
         const response = await fetch('http://localhost:8000/create', {
@@ -19,16 +26,19 @@ const [description, setdescription] = useState<string>('');
         });
         const data = await response.json();
         console.log(data);
-        Render()
+        if(Render){
+        Render();
+        }
+       
       } 
       async function handleSubmit(event:any) {
         event.preventDefault()
         if( name && image_url  && author && year && description){
 
-         CreateBook(name,image_url, author,year,description);
+         CreateBook( name,image_url, author,year,description);
          setname('')
         setimage_url('')
-      
+        router.push('/');
         }else{
           alert('preencha os campos por favor !')
         }

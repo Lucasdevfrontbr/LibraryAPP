@@ -1,15 +1,17 @@
 import React from 'react';
-
+import { useState, useContext } from 'react';
 type Props={
     id:string;
-    Render:any;
+   Render:any;
 }
+
 
 const Deletar = ({id,Render}: Props) => {
     async function DeleteBook(id:string) {
         await fetch(`http://localhost:8000/delete/${id}`, {
           method: 'DELETE',
         });
+       
     Render()
       }
      

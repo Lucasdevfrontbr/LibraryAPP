@@ -1,5 +1,7 @@
 import React from 'react';
-import { useState,useEffect } from 'react';
+import { useState, useContext } from 'react';
+
+
 
 type Props={
     id:string;
@@ -8,9 +10,11 @@ type Props={
     CurrentAuthor:string;
     CurrentUrl:string;
     CurrentYear:number;
-    Render:any;
+   Render:any;
 }
-const Edit : React.FC<Props>=({id, CurrentName, CurrentDescription, CurrentAuthor, CurrentUrl, CurrentYear, Render} ) => {
+
+
+const Edit : React.FC<Props>=({Render,id, CurrentName, CurrentDescription, CurrentAuthor, CurrentUrl, CurrentYear, } ) => {
     const [name, setname] = useState<string>(CurrentName);
     const [image_url, setimage_url] = useState<string>(CurrentUrl);
     const [author, setauthor] = useState<string>(CurrentAuthor);
@@ -18,20 +22,21 @@ const Edit : React.FC<Props>=({id, CurrentName, CurrentDescription, CurrentAutho
     const [description, setdescription] = useState<string>(CurrentDescription);
    const [ModalIsOpen, setModalIsOpen]=useState<boolean>(false)
 
+ 
 
-async function EditBook(id:string,name:string,image_url:string,author:string,year:number,description:string){
+async function EditBook(Render:any,id:string,name:string,image_url:string,author:string,year:number,description:string){
 await fetch(`http://localhost:8000/edit/${id}`,{
     method:'PUT',
     body:JSON.stringify({name, image_url, author,year,description}),
     headers:{'content-type': 'application/json'},
 })
-Render()
+Render();
 CloseModal()
 }
 
     async function handleSubmit(event:any) {
         event.preventDefault()
-         EditBook(id,name,image_url, author,year,description);
+         EditBook(Render,id,name,image_url, author,year,description);
       }
 
       function OpenModal(){
