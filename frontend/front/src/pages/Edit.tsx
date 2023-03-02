@@ -1,8 +1,49 @@
 import React from 'react';
-import { useState, useContext } from 'react';
+import { useState} from 'react';
+import styled from "styled-components"
 
+const Btn=styled.button`
+width:3rem;
+height:2rem;
+color:white;
+background:blue;
+border:blue;
+margin-left:5.2rem;
+cursor: pointer;
+`
 
+const Container = styled.div`
+  width: 2.5rem; 
+`;
+const Form=styled.form`
 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+background:white;
+border:5px solid;
+border-radius:10px;
+height:18rem;
+padding: 20px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+`
+const SaveBtn=styled.button`
+width:3rem;
+height:2rem;
+color:white;
+background:blue;
+border:blue;
+border-radius:5px;
+cursor: pointer;
+`
+
+const BtnContainer=styled.div`
+display:flex;
+justify-content:center;
+margin-top:0.5rem;
+
+`
 type Props={
     id:string;
     CurrentName:string;
@@ -22,7 +63,7 @@ const Edit : React.FC<Props>=({Render,id, CurrentName, CurrentDescription, Curre
     const [description, setdescription] = useState<string>(CurrentDescription);
    const [ModalIsOpen, setModalIsOpen]=useState<boolean>(false)
 
- 
+ console.log(ModalIsOpen)
 
 async function EditBook(Render:any,id:string,name:string,image_url:string,author:string,year:number,description:string){
 await fetch(`http://localhost:8000/edit/${id}`,{
@@ -46,14 +87,16 @@ setModalIsOpen(true)
       function CloseModal(){
         setModalIsOpen(false)
       }
-      
+      console.log('OpenModal')
   return (
    
-    <div>
-     <button onClick={OpenModal}>Editar</button>
+    <Container>
+      
+ <Btn onClick={OpenModal}>Editar</Btn>
+     
 
-     {ModalIsOpen &&( <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
+     {ModalIsOpen &&( <Form onSubmit={handleSubmit}>
+      <label htmlFor="name"><strong>Nome</strong>:</label> <br />
       <input
         type="text"
         id="name"
@@ -62,7 +105,7 @@ setModalIsOpen(true)
        
       />
       <br />
-      <label htmlFor="image_url">Imagem do livro(url):</label>
+      <label htmlFor="image_url"><strong>Imagem do livro(url):</strong></label> <br />
       <input
         type="text"
         id="image_url"
@@ -71,7 +114,7 @@ setModalIsOpen(true)
       />
       <br />
 
-      <label htmlFor="author">author:</label>
+      <label htmlFor="author"><strong>Autor:</strong></label> <br />
       <input
         type="text"
         id="author"
@@ -80,24 +123,26 @@ setModalIsOpen(true)
       />
       <br />
       
-      <label htmlFor="year">year</label>
+      <label htmlFor="year"><strong>Ano</strong></label> <br />
       <input
         type="number"
         id="year"
         value={year}
         onChange={event => setyear(parseInt(event.target.value))} 
-      />
-      <label htmlFor="description">description:</label>
+      /> <br />
+      <label htmlFor="description"><strong>descrição</strong>:</label> <br />
       <input
         type="text"
         id="description"
         value={description}
         onChange={event => setdescription(event.target.value)} 
-      />
-      <button type="submit">Salvar</button>
+      /> <br />
+      <BtnContainer>
+        <SaveBtn type="submit">Salvar</SaveBtn>
+      </BtnContainer>
       
-    </form>)}
-    </div>
+    </Form>)}
+    </Container>
   );
 };
 

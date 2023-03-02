@@ -1,5 +1,18 @@
 import React from 'react';
-import { useState, useContext } from 'react';
+import styled from 'styled-components';
+
+const Btn=styled.button`
+margin-left:7rem;
+width:3rem;
+height:2rem;
+color:white;
+background:red;
+border:red;
+cursor: pointer;
+`
+const Container=styled.div`
+width:4rem;
+`
 type Props={
     id:string;
    Render:any;
@@ -16,9 +29,9 @@ const Deletar = ({id,Render}: Props) => {
       }
      
         return (
-          <div>
-          <button onClick={async()=> await DeleteBook(id)}>Excluir</button>
-          </div>
+          <Container>
+          <Btn onClick={async()=> await DeleteBook(id)}>Excluir</Btn>
+          </Container>
         );
       };
     

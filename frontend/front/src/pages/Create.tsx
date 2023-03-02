@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useState, } from 'react';
 import { useRouter } from 'next/router';
@@ -48,7 +47,7 @@ const router = useRouter();
   return (
     <>
    <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
+      <label htmlFor="name">Nome:</label>
       <input
         type="text"
         id="name"
