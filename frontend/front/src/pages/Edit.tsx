@@ -71,8 +71,8 @@ await fetch(`http://localhost:8000/edit/${id}`,{
     body:JSON.stringify({name, image_url, author,year,description}),
     headers:{'content-type': 'application/json'},
 })
-Render();
 CloseModal()
+Render();
 }
 
     async function handleSubmit(event:any) {
@@ -81,13 +81,17 @@ CloseModal()
       }
 
       function OpenModal(){
+        if(ModalIsOpen===false){
 setModalIsOpen(true)
+      }
       }
 
       function CloseModal(){
+        if(ModalIsOpen===true){
         setModalIsOpen(false)
+        }
       }
-      console.log('OpenModal')
+  
   return (
    
     <Container>
@@ -138,7 +142,7 @@ setModalIsOpen(true)
         onChange={event => setdescription(event.target.value)} 
       /> <br />
       <BtnContainer>
-        <SaveBtn type="submit">Salvar</SaveBtn>
+        <SaveBtn  type="submit">Salvar</SaveBtn>
       </BtnContainer>
       
     </Form>)}
