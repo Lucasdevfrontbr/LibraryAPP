@@ -8,7 +8,7 @@ height:2rem;
 color:white;
 background:blue;
 border:blue;
-margin-left:5.2rem;
+margin-left:1.5rem;
 cursor: pointer;
 `
 
@@ -71,8 +71,8 @@ await fetch(`http://localhost:8000/edit/${id}`,{
     body:JSON.stringify({name, image_url, author,year,description}),
     headers:{'content-type': 'application/json'},
 })
-CloseModal()
 Render();
+CloseModal()
 }
 
     async function handleSubmit(event:any) {
@@ -81,17 +81,13 @@ Render();
       }
 
       function OpenModal(){
-        if(ModalIsOpen===false){
 setModalIsOpen(true)
-      }
       }
 
       function CloseModal(){
-        if(ModalIsOpen===true){
         setModalIsOpen(false)
-        }
       }
-  
+      console.log('OpenModal')
   return (
    
     <Container>
@@ -142,7 +138,7 @@ setModalIsOpen(true)
         onChange={event => setdescription(event.target.value)} 
       /> <br />
       <BtnContainer>
-        <SaveBtn  type="submit">Salvar</SaveBtn>
+        <SaveBtn type="submit">Salvar</SaveBtn>
       </BtnContainer>
       
     </Form>)}

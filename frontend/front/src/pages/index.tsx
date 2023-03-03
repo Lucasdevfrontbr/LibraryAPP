@@ -37,7 +37,6 @@ margin-top:5rem;
 margin-left:2rem;
 width:18rem;
 height:21rem;
-
 `
 
 const Img=styled.img`
@@ -49,8 +48,9 @@ margin-bottom:0.5rem;
 `
 const Btn=styled.div`
 display:inline-flex;
-justify-content:center;
-width:7rem;
+align-self:flex-start;
+justify-content:space-around;
+width:17.4rem;
 cursor: pointer;
 `
 const Title=styled.span`

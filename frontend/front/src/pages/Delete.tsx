@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Btn=styled.button`
-margin-left:7rem;
 width:3rem;
 height:2rem;
 color:white;
