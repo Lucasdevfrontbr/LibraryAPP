@@ -1,9 +1,9 @@
 const mysql=require('mysql')
-
+const pass = require('./pass');
 const connection=mysql.createConnection({
     host: 'localhost',
     user:'root',
-   password: 'UdY4PTxt7)!Yn+S(',
+   password: pass,
    database: 'library',
 })
 connection.connect((error)=>{
