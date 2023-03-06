@@ -1,8 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import Home from './index';
-
-
-
 describe('Home component', () => {
   beforeAll(() => {
     const mockBooks = [
@@ -11,7 +8,7 @@ describe('Home component', () => {
         description: 'Description 1',
         author: 'Author 1',
         image_url: 'http://example.com/book1.png',
-        year: 2021,
+        year: 2023,
         ID: '12345'
       },
      
@@ -25,7 +22,6 @@ describe('Home component', () => {
   it('renders list of books fetched from API', async () => {
     render(<Home />);
     
-    // Wait for books to load
     const book1Name = await screen.findByText('Book 1', {}, { timeout: 5000 });
    
 

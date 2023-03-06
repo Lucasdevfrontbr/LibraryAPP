@@ -16,7 +16,7 @@ describe('Deletar', () => {
     const button = screen.getByRole('button');
     fireEvent.click(button);
 
-    await new Promise(resolve => setTimeout(resolve, 1000)); // Aguarda um segundo para a função passada para a prop Render ser chamada.
+    await new Promise(resolve => setTimeout(resolve, 1000)); 
 
     expect(mockFetch).toHaveBeenCalledWith('http://localhost:8000/delete/1', {
       method: 'DELETE',

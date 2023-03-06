@@ -8,6 +8,7 @@ color:white;
 background:red;
 border:red;
 cursor: pointer;
+border-radius:3px;
 `
 const Container=styled.div`
 width:4rem;

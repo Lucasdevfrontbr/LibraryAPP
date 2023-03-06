@@ -10,6 +10,7 @@ background:blue;
 border:blue;
 margin-left:1.5rem;
 cursor: pointer;
+border-radius:3px;
 `
 
 const Container = styled.div`
@@ -77,7 +78,11 @@ CloseModal()
 
     async function handleSubmit(event:any) {
         event.preventDefault()
+        if(name && image_url  && author && year && description){
          EditBook(Render,id,name,image_url, author,year,description);
+        }else{
+alert("preencha todos os campos por favor !")
+        }
       }
 
       function OpenModal(){

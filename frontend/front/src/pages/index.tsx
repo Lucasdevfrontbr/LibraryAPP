@@ -1,7 +1,5 @@
 import styled from "styled-components"
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
+
 import { useEffect, useState } from 'react'
 import Delete from './Delete'
 import Edit from './Edit'
@@ -36,22 +34,21 @@ flex-direction:column;
 margin-top:5rem;
 margin-left:2rem;
 width:18rem;
-height:21rem;
+height:22rem;
 `
 
 const Img=styled.img`
 width:160px;
 height:256px;
-text-align:center;
 margin-left:4rem;
 margin-bottom:0.5rem;
+border-radius:3px;
 `
 const Btn=styled.div`
 display:inline-flex;
 align-self:flex-start;
 justify-content:space-around;
 width:17.4rem;
-cursor: pointer;
 `
 const Title=styled.span`
 font-size:1.5em;
@@ -63,7 +60,6 @@ flex-direction:row;
 flex-wrap:wrap;
 margin-left:1rem;
 margin-bottom:0.5rem;
-
 @media (max-width: 1400px){
  margin-left:1.5rem;
 }
@@ -137,7 +133,7 @@ position:relative;
 right:1.3rem;
 }
 `
-const Autor=styled.span`
+const Author=styled.span`
 text-align:center;
 `
 interface Book {
@@ -183,8 +179,8 @@ export default function Home() {
           {books.map((book) => (
             <Container  key={book.ID}>
              <Title>{book.name}</Title>
-             <Autor>{book.author}</Autor>
-              <Img src={book.image_url} alt="" />
+             <Author>{book.author}</Author>
+              <Link href={`/Description?id=${book.ID}&name=${book.name}&author=${book.author}&year=${book.year}&image_url=${book.image_url}&description=${book.description}`}><Img src={book.image_url} alt={book.name} /></Link>
              
              <Btn>
                <Edit Render={Render} id={book.ID} CurrentName={book.name} CurrentDescription={book.description} CurrentAuthor={book.author} CurrentUrl={book.image_url} CurrentYear={book.year} />
