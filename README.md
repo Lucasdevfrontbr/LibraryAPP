@@ -1,2 +1,2 @@
 # LibraryAPP
- APP de livros
+ WebApp full-stack para cadastro de livros.
