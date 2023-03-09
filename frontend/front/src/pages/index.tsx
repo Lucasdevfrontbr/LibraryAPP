@@ -13,6 +13,10 @@ height:4rem;
 justify-content:center;
 `
 
+const LinkImg=styled(Link)`
+width:10rem;
+height:256px;
+`
 
 const StyledLink = styled(Link)`
   color: #eeeef8;
@@ -35,14 +39,16 @@ margin-top:5rem;
 margin-left:2rem;
 width:18rem;
 height:22rem;
+justify-content:center;
+align-items:center;
 `
 
 const Img=styled.img`
 width:160px;
 height:256px;
-margin-left:4rem;
 margin-bottom:0.5rem;
 border-radius:3px;
+
 `
 const Btn=styled.div`
 display:inline-flex;
@@ -180,7 +186,7 @@ export default function Home() {
             <Container  key={book.ID}>
              <Title>{book.name}</Title>
              <Author>{book.author}</Author>
-              <Link href={`/Description?id=${book.ID}&name=${book.name}&author=${book.author}&year=${book.year}&image_url=${book.image_url}&description=${book.description}`}><Img src={book.image_url} alt={book.name} /></Link>
+            <LinkImg href={`/Description?id=${book.ID}&name=${book.name}&author=${book.author}&year=${book.year}&image_url=${book.image_url}&description=${book.description}`}><Img src={book.image_url} alt={book.name} /></LinkImg>
              
              <Btn>
                <Edit Render={Render} id={book.ID} CurrentName={book.name} CurrentDescription={book.description} CurrentAuthor={book.author} CurrentUrl={book.image_url} CurrentYear={book.year} />

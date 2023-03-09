@@ -14,6 +14,7 @@ border-radius:3px;
 `
 
 const Container = styled.div`
+margin-top:0.5rem;
   width: 2.5rem; 
 `;
 const Form=styled.form`

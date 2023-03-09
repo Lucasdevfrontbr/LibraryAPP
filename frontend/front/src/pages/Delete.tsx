@@ -11,6 +11,7 @@ cursor: pointer;
 border-radius:3px;
 `
 const Container=styled.div`
+margin-top:0.5rem;
 width:4rem;
 `
 type Props={
