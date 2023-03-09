@@ -136,7 +136,7 @@ setModalIsOpen(true)
         value={year}
         onChange={event => setyear(parseInt(event.target.value))} 
       /> <br />
-      <label htmlFor="description"><strong>descrição</strong>:</label> <br />
+      <label htmlFor="description"><strong>Descrição</strong>:</label> <br />
       <input
         type="text"
         id="description"
