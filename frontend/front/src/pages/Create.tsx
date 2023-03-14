@@ -66,7 +66,7 @@ function GetBack(){
   router.push('/')
 }
     async function CreateBook(name:string,image_url:string,author:string,year:number,description:string) {
-        const response = await fetch('http://localhost:8000/create', {
+        const response = await fetch('https://backend-books-nomg.vercel.app/create', {
           method: 'POST',
           body: JSON.stringify({ name,image_url, author,year,description }),
           headers: { 'Content-Type': 'application/json' },

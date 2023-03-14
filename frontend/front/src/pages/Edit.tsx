@@ -68,7 +68,7 @@ const Edit : React.FC<Props>=({Render,id, CurrentName, CurrentDescription, Curre
  console.log(ModalIsOpen)
 
 async function EditBook(Render:any,id:string,name:string,image_url:string,author:string,year:number,description:string){
-await fetch(`http://localhost:8000/edit/${id}`,{
+await fetch(`https://backend-books-nomg.vercel.app/edit/${id}`,{
     method:'PUT',
     body:JSON.stringify({name, image_url, author,year,description}),
     headers:{'content-type': 'application/json'},

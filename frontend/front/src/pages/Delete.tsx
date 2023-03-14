@@ -22,7 +22,7 @@ type Props={
 
 const Deletar = ({id,Render}: Props) => {
     async function DeleteBook(id:string) {
-        await fetch(`http://localhost:8000/delete/${id}`, {
+        await fetch(`https://backend-books-nomg.vercel.app/delete/${id}`, {
           method: 'DELETE',
         });
        

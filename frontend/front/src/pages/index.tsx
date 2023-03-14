@@ -158,7 +158,7 @@ export default function Home() {
   const [books, setBooks] = useState<Book[]>([]);
  
   async function Render() {
-    const response = await fetch('http://localhost:8000/');
+    const response = await fetch('https://backend-books-nomg.vercel.app/');
     const data = await response.json();
     setBooks(data as Book[]);
   }
