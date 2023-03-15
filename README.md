@@ -44,4 +44,4 @@ fiz o deploy usando vercel, netlify e freemysqlhosting.
 
 
 
-LInk:https://books-data-app.netlify.app/
+LInk do projetono ar :https://books-data-app.netlify.app/
