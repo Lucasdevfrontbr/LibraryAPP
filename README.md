@@ -1,6 +1,6 @@
 LibraryAPP
 
-LibraryAPP é uma WebApp full-stack que permite adicionar, excluir, editar e ver mais informações sobre livros ao clicar em sua imagem. O aplicativo foi desenvolvido com NodeJS, Express, mySQL, Next.js, TypeScript, Styled Components, Hooks e testes com Jest.
+LibraryAPP é uma WebApp full-stack que permite adicionar, excluir, editar livros e ver mais informações sobre livros ao clicar em sua imagem. O aplicativo foi desenvolvido com NodeJS, Express, mySQL, Next.js, TypeScript, Styled Components, Hooks e testes com Jest.
 
 Funcionalidades:
 
