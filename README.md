@@ -40,7 +40,7 @@ Jest: um framework de testes para JavaScript.
 
 
 
-fiz o deploy usando vercel, netlify e freemysqlhosting.
+fiz o deploy usando vercel e netlify.
 
 
 
