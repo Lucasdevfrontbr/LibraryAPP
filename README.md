@@ -27,7 +27,7 @@ MySQL: um sistema de gerenciamento de banco de dados relacional.
 Next.js: um framework de React que permite renderização server-side e geração de páginas estáticas.
 
 
-TypeScript: um supersetque adiciona tipagem ao JavaScript.
+TypeScript: um superset que adiciona tipagem ao JavaScript.
 
 
 Styled Components: uma biblioteca que permite escrever estilos CSS diretamente em componentes React.
