@@ -1,6 +1,6 @@
 const app=require('express')()
 const connection = require('./db');
-const {PORT}= require('./config')
+
 const cors=require('cors')
 app.use(cors())
 const bodyParser = require("body-parser")
@@ -45,4 +45,4 @@ connection.query(sql,values,(error)=>{
   })
  })
 
-app.listen(PORT)
+app.listen(3000)
